@@ -33,7 +33,7 @@ function visibleGames() {
   });
   if (state.sort === "az") list.sort(byName);
   else if (state.sort === "new") list.sort((a, b) => b._order - a._order);
-  else list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || byName(a, b));
+  else list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || b._order - a._order);
   return list;
 }
 
